@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333;
+  }
+  
+  /* Mode Selection Screen */
+  #mode-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #mode-selection h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  #mode-selection button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #6c5ce7;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  #mode-selection button:hover {
+    background: #4a3dc2;
+    transform: scale(1.05);
+  }
+  
+  /* Game Container */
+  #game-container {
+    display: none;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  #game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border: 2px solid #6c5ce7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .cell:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  .cell[data-index]:not(:empty) {
+    animation: pop 0.3s ease;
+  }
+  
+  @keyframes pop {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Player X and O Colors */
+  .cell[data-index="X"] {
+    color: #e74c3c; /* Red for X */
+  }
+  
+  .cell[data-index="O"] {
+    color: #3498db; /* Blue for O */
+  }
+  
+  /* Reset Button */
+  #reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #6c5ce7;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  #reset-button:hover {
+    background: #4a3dc2;
+    transform: scale(1.05);
+  }
+  
+  /* Status Text */
+  #status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
