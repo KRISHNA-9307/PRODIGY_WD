@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="PRODIGY_WD_05.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-card animate__animated animate__fadeInUp">
+            <h1 style="color: green;">Weather App</h1>
+            <h3>Get Real-Time Weather Updates</h3>
+            <form onsubmit="event.preventDefault(); weatherFn($('#city-input').val());">
+                <input type="text" id="city-input" placeholder="Enter city name" required>
+                <button type="submit" id="city-input-btn">
+                    <i class="fas fa-search"></i> Get Weather
+                </button>
+            </form>
+            <div id="loading" class="animate__animated animate__fadeIn">
+                <i class="fas fa-spinner fa-spin"></i> Loading...
+            </div>
+            <div id="weather-info" class="animate__animated animate__fadeIn">
+                <h2 id="city-name"></h2>
+                <p id="date"></p>
+                <img id="weather-icon" src="" alt="Weather Icon">
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="PRODIGY_WD_05.js"></script>
+</body>
+
+</html>
