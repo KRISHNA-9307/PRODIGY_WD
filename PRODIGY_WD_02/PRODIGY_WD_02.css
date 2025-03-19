@@ -1,0 +1,111 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    margin: 0;
+}
+
+.stopwatch {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+.display {
+    font-size: 3em;
+    margin: 20px 0;
+    color: #333;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.controls button {
+    font-size: 1em;
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#startPause {
+    background-color: #4caf50;
+    color: white;
+}
+
+#startPause:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#reset {
+    background-color: #f44336;
+    color: white;
+}
+
+#reset:hover {
+    background-color: #e53935;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#lap {
+    background-color: #2196f3;
+    color: white;
+}
+
+#lap:hover {
+    background-color: #1e88e5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.laps {
+    margin-top: 20px;
+    max-height: 150px;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.laps h2 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.laps ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.laps ul li {
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
